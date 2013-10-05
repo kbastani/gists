@@ -16,10 +16,10 @@ Observations are made, captured, from a perspective of a position in time and sp
 
 A graph database provides you a means to model space and see information from the perspective of a point relative to other points. Those points can represent a condition or state of the world.
 
-Pam met Sally.
-John met Sally.
-Sally met Anne.
-Anne met Pam.
+* Pam met Sally.
+* John met Sally.
+* Sally met Anne.
+* Anne met Pam.
 
 Time is a hierarchical model of categorization that enables the back-referencing or prediction of events on a timeline that moves forward in a single direction.
 
@@ -29,6 +29,7 @@ So what is an event?
 
 An event is any feature or characteristic that describes the state of the world in the past, present, or future.
 
+image::https://raw.github.com/kbastani/gists/master/meta/TSEMM.png[Time_Scale_Event_Meta_Model]
 
 == Include a query console
 
