@@ -1,14 +1,34 @@
-= How to create a GraphGist
+= Time Scale Event Meta Model =
 
-You create a GraphGist by creating a https://gist.github.com/[GitHub Gist] in http://asciidoctor.org/docs/asciidoc-quick-reference/[AsciiDoc] and enter the URL to it in the form on this page.
-Alternatively, you can put an AsciiDoc document in https://www.dropbox.com/[Dropbox] and enter the public URL in the form.
+"Time is a dimension in which events can be ordered from the past through the present into the future." - via http://en.wikipedia.org/wiki/Time
 
-This GraphGist shows the basics of using AsciiDoc syntax and a few additions for GraphGists.
-The additions are entered as comments on their own line.
-They are:  +//console+ for a query console; +//hide+, +//setup+ and +//output+ to configure a query; +//graph+ and +//table+ to visualize queries and show a result table.
+Recently at the GraphConnect 2013 conference in San Francisco, many questions were asked about how to handle temporal or time-based traversals in a Neo4j graph database.
 
-Click on the Page Source button in the menu to see the source for this GraphGist.
-Read below to get the full details.
+The goal of this GraphGist is to provide you with a lens to help you see information as simple temporal facts that are captured across space and time.
+
+Graph databases like Neo4j are not just a traditional data store. Rather, graph databases are an entirely new paradigm that aids a person in capturing meaning from the world as relativistic information described by connected data. 
+
+What is relativistic information?
+
+Meaning.
+
+Observations are made, captured, from a perspective of a position in time and space. A graph is a model of that space.
+
+A graph database provides you a means to model space and see information from the perspective of a point relative to other points. Those points can represent a condition or state of the world.
+
+Pam met Sally.
+John met Sally.
+Sally met Anne.
+Anne met Pam.
+
+Time is a hierarchical model of categorization that enables the back-referencing or prediction of events on a timeline that moves forward in a single direction.
+
+One of the most powerful use cases for traversals in a graph database is the need to model the recurrence relations of past events as they relate to future events.
+
+So what is an event?
+
+An event is any feature or characteristic that describes the state of the world in the past, present, or future.
+
 
 == Include a query console
 
