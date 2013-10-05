@@ -2,6 +2,8 @@
 
 "Time is a dimension in which events can be ordered from the past through the present into the future." - via http://en.wikipedia.org/wiki/Time
 
+image::https://raw.github.com/kbastani/gists/master/meta/time-line.png[Timeline]
+
 Recently at the GraphConnect 2013 conference in San Francisco, many questions were asked about how to handle temporal or time-based traversals in a Neo4j graph database.
 
 The goal of this GraphGist is to provide you with a lens to help you see information as simple temporal facts that are captured across space and time.
