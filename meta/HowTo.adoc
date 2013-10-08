@@ -35,8 +35,16 @@ So what is an event?
 
 An event is any feature or characteristic that describes the state of the world in the past, present, or future.
 
-An event is described by an arbitrary set of features that generalize on the properties contained across all possible events.
+Furthermore, an event is described by an arbitrary set of features that generalize on the properties contained across all possible events.
 
-A feature is described by an arbitrary set of classes that generalize further on its combinatorial or shared characteristics. In other words, two or more features can be grouped into a class that generalizes its characteristics at a group level.
+This means that an event is only meaningful by connecting it to data that describes it. By attaching a set of features, represented by nodes in the graph, it is possible to attribute meaning to a set of temporal events.
 
-image::https://raw.github.com/kbastani/gists/master/meta/TSEMM.png[Time_Scale_Event_Meta_Model]
+A feature is further described by an arbitrary set of classes that generalize on its combinatorial or shared characteristics. In other words, two or more features can be grouped into a class that generalizes its characteristics at a group level.
+
+The image below represents a time scale (a, b, c, d) connected to a series of events (e). Events (e) are also connected to a hierarchy of features (f) which are then further generalized into classes (g).
+
+image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-v1.01.png[Time_Scale_Event_Meta_Model]
+
+This causality graph models the basic structure for determining the role of one event in time to another.
+
+"Causality (also referred to as causation[1]) is the relation between an event (the cause) and a second event (the effect), where the second event is understood as a consequence of the first." via http://en.wikipedia.org/wiki/Causality
