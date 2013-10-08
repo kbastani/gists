@@ -1,4 +1,4 @@
-= Time Scale Event Meta Model =
+== Time Scale Event Meta Model ==
 
 "Time is a dimension in which events can be ordered from the past through the present into the future." - via http://en.wikipedia.org/wiki/Time
 
@@ -10,7 +10,7 @@ The goal of this GraphGist is to provide you with a lens to help you see informa
 
 Graph databases like Neo4j are not just a traditional data store. Rather, graph databases are an entirely new paradigm that aids a person in capturing meaning from the world as relativistic information described by connected data. 
 
-What is relativistic information?
+=== What is relativistic information? ===
 
 Relatvistic information is actually meaning. Unconnected data has no meaning. Only when you connect data can you better describe what it actually means.
 
@@ -18,20 +18,30 @@ Observations are made, captured, from a perspective of a position in time and sp
 
 A graph database provides you a means to model space and see information from the perspective of a point relative to other points. Those points can represent a condition or state of the world.
 
+Consider the example below. 
 
 * Pam met Sally.
 * John met Sally.
 * Sally met Anne.
 * Anne met Pam.
 
+Each point on the graph is from the perspective of a person relative to meeting other people.
 
 image::https://raw.github.com/kbastani/gists/master/meta/event-model-1.png[Event_Model]
 
+The need to understand these nodes temporally, ordered linearly as time-based events, starts with modeling time as a graph.
+
+=== What is a time graph? ===
+
 Time is a hierarchical model of categorization that enables the back-referencing or prediction of events on a timeline that moves forward in a single direction.
 
-One of the most powerful use cases for traversals in a graph database is the need to model the recurrence relations of past events as they relate to future events.
+image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-v1.02.png[Time_Scale_Event_Meta_Model]
 
-So what is an event?
+In the time scale graph that is modeled above, a shortest path traversal from an orange node to a teal node constitutes a unique time identity.
+
+One of the most powerful use cases for traversals in a graph database is the need to model the recurrence relations of past events as they relate to future events. 
+
+=== What is an event graph? ===
 
 An event is any feature or characteristic that describes the state of the world in the past, present, or future.
 
