@@ -35,9 +35,11 @@ The need to understand these nodes temporally, ordered linearly as time-based ev
 
 Time is a hierarchical model of categorization that enables the back-referencing or prediction of events on a timeline that moves forward in a single direction.
 
-image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-v1.02.png[Time_Scale_Event_Meta_Model]
+image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-v1.04.png[Time_Scale_Event_Meta_Model]
 
-In the time scale graph that is modeled above, a shortest path traversal from an orange node to a teal node constitutes a unique time identity.
+In the time scale graph that is modeled above, a shortest path traversal from a blue colored node to the transparent colored node constitutes a unique time identity in bits.
+
+The identity traced by the red path is 0->1->0->1->0->0. The reverse path is 0->0->1->0->1->0 or simply 001010, a unique identity in bits.
 
 One of the most powerful use cases for traversals in a graph database is the need to model the recurrence relations of past events as they relate to future events. 
 
