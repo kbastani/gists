@@ -121,6 +121,15 @@ RETURN *
 
 //console
 
+[source,cypher]
+----
+MATCH p=n1:d-[:OF*]->n2:y 
+WHERE n1.key = 'd33' 
+RETURN p
+----
+
+//console
+
 One of the most powerful use cases for traversals in a graph database is the need to model the recurrence relations of past events as they relate to future events. 
 
 
