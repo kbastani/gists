@@ -121,7 +121,7 @@ RETURN *
 
 //console
 
-====Get time identity as shortest path====
+===Get time identity as shortest path===
 
 [source,cypher]
 ----
@@ -132,7 +132,7 @@ RETURN p
 
 //console
 
-====Get time identity as bit string====
+===Get time identity as bit string===
 
 [source,cypher]
 ----
