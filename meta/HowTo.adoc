@@ -46,7 +46,7 @@ The identity traced by the red path is 0->1->0->1->0->0. The reverse path is 0->
  
 [source,cypher]
 ----
-CREATE (root:root { key:'root' })<-[r:OF]-(a:a { key:'a0', tempo:'0' }) 
+CREATE (a:a { key:'a0', tempo:'0' }) 
 CREATE (a)<-[r:OF]-(b0:b { key:'b0', tempo:'0' }) 
 CREATE (a)<-[r:OF]-(b1:b { key:'b1', tempo:'1' }) 
 CREATE b0<-[r:OF]-(c0:c { key:'c0', tempo:'0' }) 
@@ -62,9 +62,12 @@ CREATE c1<-[r:OF]-d2, c1<-[r:OF]-d3
 CREATE c2<-[r:OF]-d4, c2<-[r:OF]-d5
 CREATE c3<-[r:OF]-d6, c3<-[r:OF]-d7
 CREATE d0-[r:NEXT]->d1-[r:NEXT]->d2-[r:NEXT]->d3-[r:NEXT]->d4-[r:NEXT]->d5-[r:NEXT]->d6-[r:NEXT]->d7
-CREATE (a)-[r:OF]->(a1:a { key:'a1', tempo:'1' }) 
+CREATE (a1:a { key:'a1', tempo:'1' }) 
 CREATE (a1)<-[r:OF]-(b2:b { key:'b2', tempo:'0' }) 
 CREATE (a1)<-[r:OF]-(b3:b { key:'b3', tempo:'1' }) 
+CREATE (z0:z { key: 'z0', tempo:'0' })<-[r:OF]-(a1)
+CREATE (y0:y { key: 'y0', tempo:'0' })<-[r:OF]-(z0)
+CREATE (z0)<-[r:OF]-(a)
 CREATE b2<-[r:OF]-(c4:c { key:'c4', tempo:'0' }) 
 CREATE b2<-[r:OF]-(c5:c { key:'c5', tempo:'1' }) 
 CREATE b3<-[r:OF]-(c6:c { key:'c6', tempo:'0' }) 
@@ -78,9 +81,11 @@ CREATE c5<-[r:OF]-d10, c5<-[r:OF]-d11
 CREATE c6<-[r:OF]-d12, c6<-[r:OF]-d13
 CREATE c7<-[r:OF]-d14, c7<-[r:OF]-d15
 CREATE d7-[r:NEXT]->d8-[r:NEXT]->d9-[r:NEXT]->d10-[r:NEXT]->d11-[r:NEXT]->d12-[r:NEXT]->d13-[r:NEXT]->d14-[r:NEXT]->d15
-CREATE (a1)-[r:OF]->(a2:a { key:'a2', tempo:'1' }) 
+CREATE (a2:a { key:'a2', tempo:'1' }) 
 CREATE (a2)<-[r:OF]-(b4:b { key:'b4', tempo:'0' }) 
 CREATE (a2)<-[r:OF]-(b5:b { key:'b5', tempo:'1' }) 
+CREATE (z1:z { key: 'z1', tempo:'0' })<-[r:OF]-(a2)
+CREATE y0<-[r:OF]-z1
 CREATE b4<-[r:OF]-(c8:c { key:'c8', tempo:'0' }) 
 CREATE b4<-[r:OF]-(c9:c { key:'c9', tempo:'1' }) 
 CREATE b5<-[r:OF]-(c10:c { key:'c10', tempo:'0' }) 
@@ -94,7 +99,24 @@ CREATE c9<-[r:OF]-d18, c9<-[r:OF]-d19
 CREATE c10<-[r:OF]-d20, c10<-[r:OF]-d21
 CREATE c11<-[r:OF]-d22, c11<-[r:OF]-d23
 CREATE d15-[r:NEXT]->d16-[r:NEXT]->d17-[r:NEXT]->d18-[r:NEXT]->d19-[r:NEXT]->d20-[r:NEXT]->d21-[r:NEXT]->d22-[r:NEXT]->d23
-RETURN a, b0, b1, c0, c1, c2, d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11
+CREATE (a3:a { key:'a2', tempo:'1' }) 
+CREATE (a3)<-[r:OF]-(b6:b { key:'b6', tempo:'0' }) 
+CREATE (a3)<-[r:OF]-(b7:b { key:'b7', tempo:'1' }) 
+CREATE (z1)<-[r:OF]-(a3)
+CREATE b6<-[r:OF]-(c12:c { key:'c12', tempo:'0' }) 
+CREATE b6<-[r:OF]-(c13:c { key:'c13', tempo:'1' }) 
+CREATE b7<-[r:OF]-(c14:c { key:'c14', tempo:'0' }) 
+CREATE b7<-[r:OF]-(c15:c { key:'c15', tempo:'1' }) 
+CREATE (d24:d { key:'d24', tempo:'0', interval:'50' }),(d25:d { key:'d25', tempo:'1', interval:'50' })
+CREATE (d26:d { key:'d26', tempo:'0', interval:'50' }),(d27:d { key:'d27', tempo:'1', interval:'50' })
+CREATE (d28:d { key:'d28', tempo:'0', interval:'50' }),(d29:d { key:'d29', tempo:'1', interval:'50' })
+CREATE (d30:d { key:'d30', tempo:'0', interval:'50' }),(d31:d { key:'d31', tempo:'1', interval:'50' })
+CREATE c12<-[r:OF]-d24, c12<-[r:OF]-d25
+CREATE c13<-[r:OF]-d26, c13<-[r:OF]-d27
+CREATE c14<-[r:OF]-d28, c14<-[r:OF]-d29
+CREATE c15<-[r:OF]-d30, c15<-[r:OF]-d31
+CREATE d23-[r:NEXT]->d24-[r:NEXT]->d25-[r:NEXT]->d26-[r:NEXT]->d27-[r:NEXT]->d28-[r:NEXT]->d29-[r:NEXT]->d30-[r:NEXT]->d31
+RETURN *
 ----
 
 //console
