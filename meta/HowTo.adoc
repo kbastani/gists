@@ -180,6 +180,20 @@ The image below represents a time scale connected to a series of events (met). E
 
 image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
 
+=== Order temporal events by time identity
+
+//output
+[source,cypher]
+----
+
+MATCH p=p0:class:person-[:event]->ev-[:event]->p1:class:person 
+WITH p, ev 
+MATCH time_identity = d0:d<-[:event]-ev 
+WITH d0, p 
+MATCH p1=d0-[:child_of*]->y0:y 
+RETURN extract(x IN nodes(p)| coalesce(x.name, x.key)), reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity 
+ORDER BY TimeIdentity
+
 This causality graph models the basic structure for determining the role of one event in time to another.
 
 "Causality (also referred to as causation[1]) is the relation between an event (the cause) and a second event (the effect), where the second event is understood as a consequence of the first." via http://en.wikipedia.org/wiki/Causality
