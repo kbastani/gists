@@ -185,7 +185,6 @@ image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.
 //output
 [source,cypher]
 ----
-
 MATCH p=p0:class:person-[:event]->ev-[:event]->p1:class:person 
 WITH p, ev 
 MATCH time_identity = d0:d<-[:event]-ev 
@@ -193,6 +192,7 @@ WITH d0, p
 MATCH p1=d0-[:child_of*]->y0:y 
 RETURN extract(x IN nodes(p)| coalesce(x.name, x.key)), reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity 
 ORDER BY TimeIdentity
+----
 
 This causality graph models the basic structure for determining the role of one event in time to another.
 
