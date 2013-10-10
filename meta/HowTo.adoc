@@ -43,7 +43,6 @@ The identity traced by the red path is 0->1->0->1->0->0. The reverse path is 0->
 
 //hide
 //setup
- 
 [source,cypher]
 ----
 CREATE (a:a { key:'a0', tempo:'0' }) 
@@ -118,8 +117,6 @@ CREATE c15<-[r:child_of]-d30, c15<-[r:child_of]-d31
 CREATE d23-[r:NEXT]->d24-[r:NEXT]->d25-[r:NEXT]->d26-[r:NEXT]->d27-[r:NEXT]->d28-[r:NEXT]->d29-[r:NEXT]->d30-[r:NEXT]->d31
 RETURN *
 ----
-
-//console
 
 === Get time identity as shortest path
 
