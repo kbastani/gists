@@ -121,6 +121,8 @@ RETURN *
 
 //console
 
+====Get time identity as shortest path====
+
 [source,cypher]
 ----
 MATCH p=shortestPath(n1:d-[:child_of*]->n2:y) 
@@ -130,6 +132,9 @@ RETURN p
 
 //console
 
+====Get time identity as bit string====
+
+[source,cypher]
 ----
 MATCH p=shortestPath(n1:d-[:child_of*]->n2:y) 
 RETURN DISTINCT reduce(s = '' , n IN nodes(p)| s + n.tempo) AS TimeIdentity 
