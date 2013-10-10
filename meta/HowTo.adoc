@@ -41,6 +41,10 @@ In the time scale graph that is modeled above, a shortest path traversal from a 
 
 The identity traced by the red path is 0->1->0->1->0->0. The reverse path is 0->0->1->0->1->0 or simply 001010, a unique identity in bits.
 
+//hide
+//setup
+//output
+ 
 [source,cypher]
 ----
 CREATE (root:root { key:'root' })<-[r:OF]-(a:a { key:'a0', tempo:'0' }) 
