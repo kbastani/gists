@@ -46,75 +46,88 @@ The identity traced by the red path is 0->1->0->1->0->0. The reverse path is 0->
 [source,cypher]
 ----
 CREATE (a:a { key:'a0', tempo:'0' }) 
-CREATE (a)<-[r:child_of]-(b0:b { key:'b0', tempo:'0' }) 
-CREATE (a)<-[r:child_of]-(b1:b { key:'b1', tempo:'1' }) 
-CREATE b0<-[r:child_of]-(c0:c { key:'c0', tempo:'0' }) 
-CREATE b0<-[r:child_of]-(c1:c { key:'c1', tempo:'1' }) 
-CREATE b1<-[r:child_of]-(c2:c { key:'c2', tempo:'0' }) 
-CREATE b1<-[r:child_of]-(c3:c { key:'c3', tempo:'1' }) 
+CREATE (a)<-[:child_of]-(b0:b { key:'b0', tempo:'0' }) 
+CREATE (a)<-[:child_of]-(b1:b { key:'b1', tempo:'1' }) 
+CREATE b0<-[:child_of]-(c0:c { key:'c0', tempo:'0' }) 
+CREATE b0<-[:child_of]-(c1:c { key:'c1', tempo:'1' }) 
+CREATE b1<-[:child_of]-(c2:c { key:'c2', tempo:'0' }) 
+CREATE b1<-[:child_of]-(c3:c { key:'c3', tempo:'1' }) 
 CREATE (d0:d { key:'d0', tempo:'0', interval:'50' }),(d1:d { key:'d1', tempo:'1', interval:'50' })
 CREATE (d2:d { key:'d2', tempo:'0', interval:'50' }),(d3:d { key:'d3', tempo:'1', interval:'50' })
 CREATE (d4:d { key:'d4', tempo:'0', interval:'50' }),(d5:d { key:'d5', tempo:'1', interval:'50' })
 CREATE (d6:d { key:'d6', tempo:'0', interval:'50' }),(d7:d { key:'d7', tempo:'1', interval:'50' }) 
-CREATE c0<-[r:child_of]-d0, c0<-[r:child_of]-d1
-CREATE c1<-[r:child_of]-d2, c1<-[r:child_of]-d3
-CREATE c2<-[r:child_of]-d4, c2<-[r:child_of]-d5
-CREATE c3<-[r:child_of]-d6, c3<-[r:child_of]-d7
-CREATE d0-[r:NEXT]->d1-[r:NEXT]->d2-[r:NEXT]->d3-[r:NEXT]->d4-[r:NEXT]->d5-[r:NEXT]->d6-[r:NEXT]->d7
+CREATE c0<-[:child_of]-d0, c0<-[:child_of]-d1
+CREATE c1<-[:child_of]-d2, c1<-[:child_of]-d3
+CREATE c2<-[:child_of]-d4, c2<-[:child_of]-d5
+CREATE c3<-[:child_of]-d6, c3<-[:child_of]-d7
+CREATE d0-[:NEXT]->d1-[:NEXT]->d2-[:NEXT]->d3-[:NEXT]->d4-[:NEXT]->d5-[:NEXT]->d6-[:NEXT]->d7
 CREATE (a1:a { key:'a1', tempo:'1' }) 
-CREATE (a1)<-[r:child_of]-(b2:b { key:'b2', tempo:'0' }) 
-CREATE (a1)<-[r:child_of]-(b3:b { key:'b3', tempo:'1' }) 
-CREATE (z0:z { key: 'z0', tempo:'0' })<-[r:child_of]-(a1)
-CREATE (y0:y { key: 'y0', tempo:'0' })<-[r:child_of]-(z0)
-CREATE (z0)<-[r:child_of]-(a)
-CREATE b2<-[r:child_of]-(c4:c { key:'c4', tempo:'0' }) 
-CREATE b2<-[r:child_of]-(c5:c { key:'c5', tempo:'1' }) 
-CREATE b3<-[r:child_of]-(c6:c { key:'c6', tempo:'0' }) 
-CREATE b3<-[r:child_of]-(c7:c { key:'c7', tempo:'1' }) 
+CREATE (a1)<-[:child_of]-(b2:b { key:'b2', tempo:'0' }) 
+CREATE (a1)<-[:child_of]-(b3:b { key:'b3', tempo:'1' }) 
+CREATE (z0:z { key: 'z0', tempo:'0' })<-[:child_of]-(a1)
+CREATE (y0:y { key: 'y0', tempo:'0' })<-[:child_of]-(z0)
+CREATE (z0)<-[:child_of]-(a)
+CREATE b2<-[:child_of]-(c4:c { key:'c4', tempo:'0' }) 
+CREATE b2<-[:child_of]-(c5:c { key:'c5', tempo:'1' }) 
+CREATE b3<-[:child_of]-(c6:c { key:'c6', tempo:'0' }) 
+CREATE b3<-[:child_of]-(c7:c { key:'c7', tempo:'1' }) 
 CREATE (d8:d { key:'d8', tempo:'0', interval:'50' }),(d9:d { key:'d9', tempo:'1', interval:'50' })
 CREATE (d10:d { key:'d10', tempo:'0', interval:'50' }),(d11:d { key:'d11', tempo:'1', interval:'50' })
 CREATE (d12:d { key:'d12', tempo:'0', interval:'50' }),(d13:d { key:'d13', tempo:'1', interval:'50' })
 CREATE (d14:d { key:'d14', tempo:'0', interval:'50' }),(d15:d { key:'d15', tempo:'1', interval:'50' }) 
-CREATE c4<-[r:child_of]-d8, c4<-[r:child_of]-d9
-CREATE c5<-[r:child_of]-d10, c5<-[r:child_of]-d11
-CREATE c6<-[r:child_of]-d12, c6<-[r:child_of]-d13
-CREATE c7<-[r:child_of]-d14, c7<-[r:child_of]-d15
-CREATE d7-[r:NEXT]->d8-[r:NEXT]->d9-[r:NEXT]->d10-[r:NEXT]->d11-[r:NEXT]->d12-[r:NEXT]->d13-[r:NEXT]->d14-[r:NEXT]->d15
+CREATE c4<-[:child_of]-d8, c4<-[:child_of]-d9
+CREATE c5<-[:child_of]-d10, c5<-[:child_of]-d11
+CREATE c6<-[:child_of]-d12, c6<-[:child_of]-d13
+CREATE c7<-[:child_of]-d14, c7<-[:child_of]-d15
+CREATE d7-[:NEXT]->d8-[:NEXT]->d9-[:NEXT]->d10-[:NEXT]->d11-[:NEXT]->d12-[:NEXT]->d13-[:NEXT]->d14-[:NEXT]->d15
 CREATE (a2:a { key:'a2', tempo:'0' }) 
-CREATE (a2)<-[r:child_of]-(b4:b { key:'b4', tempo:'0' }) 
-CREATE (a2)<-[r:child_of]-(b5:b { key:'b5', tempo:'1' }) 
-CREATE (z1:z { key: 'z1', tempo:'1' })<-[r:child_of]-(a2)
-CREATE y0<-[r:child_of]-z1
-CREATE b4<-[r:child_of]-(c8:c { key:'c8', tempo:'0' }) 
-CREATE b4<-[r:child_of]-(c9:c { key:'c9', tempo:'1' }) 
-CREATE b5<-[r:child_of]-(c10:c { key:'c10', tempo:'0' }) 
-CREATE b5<-[r:child_of]-(c11:c { key:'c11', tempo:'1' }) 
+CREATE (a2)<-[:child_of]-(b4:b { key:'b4', tempo:'0' }) 
+CREATE (a2)<-[:child_of]-(b5:b { key:'b5', tempo:'1' }) 
+CREATE (z1:z { key: 'z1', tempo:'0' })<-[:child_of]-(a2)
+CREATE y0<-[:child_of]-z1
+CREATE b4<-[:child_of]-(c8:c { key:'c8', tempo:'0' }) 
+CREATE b4<-[:child_of]-(c9:c { key:'c9', tempo:'1' }) 
+CREATE b5<-[:child_of]-(c10:c { key:'c10', tempo:'0' }) 
+CREATE b5<-[:child_of]-(c11:c { key:'c11', tempo:'1' }) 
 CREATE (d16:d { key:'d16', tempo:'0', interval:'50' }),(d17:d { key:'d17', tempo:'1', interval:'50' })
 CREATE (d18:d { key:'d18', tempo:'0', interval:'50' }),(d19:d { key:'d19', tempo:'1', interval:'50' })
 CREATE (d20:d { key:'d20', tempo:'0', interval:'50' }),(d21:d { key:'d21', tempo:'1', interval:'50' })
 CREATE (d22:d { key:'d22', tempo:'0', interval:'50' }),(d23:d { key:'d23', tempo:'1', interval:'50' })
-CREATE c8<-[r:child_of]-d16, c8<-[r:child_of]-d17
-CREATE c9<-[r:child_of]-d18, c9<-[r:child_of]-d19
-CREATE c10<-[r:child_of]-d20, c10<-[r:child_of]-d21
-CREATE c11<-[r:child_of]-d22, c11<-[r:child_of]-d23
-CREATE d15-[r:NEXT]->d16-[r:NEXT]->d17-[r:NEXT]->d18-[r:NEXT]->d19-[r:NEXT]->d20-[r:NEXT]->d21-[r:NEXT]->d22-[r:NEXT]->d23
+CREATE c8<-[:child_of]-d16, c8<-[:child_of]-d17
+CREATE c9<-[:child_of]-d18, c9<-[:child_of]-d19
+CREATE c10<-[:child_of]-d20, c10<-[:child_of]-d21
+CREATE c11<-[:child_of]-d22, c11<-[:child_of]-d23
+CREATE d15-[:NEXT]->d16-[:NEXT]->d17-[:NEXT]->d18-[:NEXT]->d19-[:NEXT]->d20-[:NEXT]->d21-[:NEXT]->d22-[:NEXT]->d23
 CREATE (a3:a { key:'a3', tempo:'1' }) 
-CREATE (a3)<-[r:child_of]-(b6:b { key:'b6', tempo:'0' }) 
-CREATE (a3)<-[r:child_of]-(b7:b { key:'b7', tempo:'1' }) 
-CREATE (z1)<-[r:child_of]-(a3)
-CREATE b6<-[r:child_of]-(c12:c { key:'c12', tempo:'0' }) 
-CREATE b6<-[r:child_of]-(c13:c { key:'c13', tempo:'1' }) 
-CREATE b7<-[r:child_of]-(c14:c { key:'c14', tempo:'0' }) 
-CREATE b7<-[r:child_of]-(c15:c { key:'c15', tempo:'1' }) 
+CREATE (a3)<-[:child_of]-(b6:b { key:'b6', tempo:'0' }) 
+CREATE (a3)<-[:child_of]-(b7:b { key:'b7', tempo:'1' }) 
+CREATE (z1)<-[:child_of]-(a3)
+CREATE b6<-[:child_of]-(c12:c { key:'c12', tempo:'0' }) 
+CREATE b6<-[:child_of]-(c13:c { key:'c13', tempo:'1' }) 
+CREATE b7<-[:child_of]-(c14:c { key:'c14', tempo:'0' }) 
+CREATE b7<-[:child_of]-(c15:c { key:'c15', tempo:'1' }) 
 CREATE (d24:d { key:'d24', tempo:'0', interval:'50' }),(d25:d { key:'d25', tempo:'1', interval:'50' })
 CREATE (d26:d { key:'d26', tempo:'0', interval:'50' }),(d27:d { key:'d27', tempo:'1', interval:'50' })
 CREATE (d28:d { key:'d28', tempo:'0', interval:'50' }),(d29:d { key:'d29', tempo:'1', interval:'50' })
 CREATE (d30:d { key:'d30', tempo:'0', interval:'50' }),(d31:d { key:'d31', tempo:'1', interval:'50' })
-CREATE c12<-[r:child_of]-d24, c12<-[r:child_of]-d25
-CREATE c13<-[r:child_of]-d26, c13<-[r:child_of]-d27
-CREATE c14<-[r:child_of]-d28, c14<-[r:child_of]-d29
-CREATE c15<-[r:child_of]-d30, c15<-[r:child_of]-d31
-CREATE d23-[r:NEXT]->d24-[r:NEXT]->d25-[r:NEXT]->d26-[r:NEXT]->d27-[r:NEXT]->d28-[r:NEXT]->d29-[r:NEXT]->d30-[r:NEXT]->d31
+CREATE c12<-[:child_of]-d24, c12<-[:child_of]-d25
+CREATE c13<-[:child_of]-d26, c13<-[:child_of]-d27
+CREATE c14<-[:child_of]-d28, c14<-[:child_of]-d29
+CREATE c15<-[:child_of]-d30, c15<-[:child_of]-d31
+CREATE d23-[:NEXT]->d24-[:NEXT]->d25-[:NEXT]->d26-[:NEXT]->d27-[:NEXT]->d28-[:NEXT]->d29-[:NEXT]->d30-[:NEXT]->d31
+CREATE (met0:event:met { key:'met0', verb:'meet', past:'has met', present:'meets', future:'will meet' })-[:event]->d0
+CREATE (met1:event:met { key:'met1', verb:'meet', past:'has met', present:'meets', future:'will meet' })-[:event]->d5
+CREATE (met2:event:met { key:'met2', verb:'meet', past:'has met', present:'meets', future:'will meet' })-[:event]->d9 
+CREATE (met3:event:met { key:'met3', verb:'meet', past:'has met', present:'meets', future:'will meet' })-[:event]->d14
+CREATE (person:class { key:'person', plural:'People', singula:'Person' })
+CREATE (sally:class:person { key:'person0', name:'Sally' })-[:class_of]->person
+CREATE (anne:class:person { key:'person1', name:'Anne' })-[:class_of]->person
+CREATE (john:class:person { key:'person2', name:'John' })-[:class_of]->person
+CREATE (pam:class:person { key: 'person3', name:'Pam' })-[:class_of]->person
+CREATE anne-[:event]->met0-[:event]->pam
+CREATE pam-[:event]->met1-[:event]->sally
+CREATE sally-[:event]->met2-[:event]->anne
+CREATE john-[:event]->met3-[:event]->sally   
 RETURN *
 ----
 
