@@ -55,7 +55,7 @@ A feature is further described by an arbitrary set of classes that generalize on
 
 The image below represents a time scale (a, b, c, d) connected to a series of events (e). Events (e) are also connected to a hierarchy of features (f) which are then further generalized into classes (g).
 
-image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-v1.01.png[Time_Scale_Event_Meta_Model]
+image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
 
 This causality graph models the basic structure for determining the role of one event in time to another.
 
