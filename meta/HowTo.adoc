@@ -43,7 +43,6 @@ The identity traced by the red path is 0->1->0->1->0->0. The reverse path is 0->
 
 //hide
 //setup
-//output
  
 [source,cypher]
 ----
