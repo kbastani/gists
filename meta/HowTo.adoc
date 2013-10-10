@@ -130,7 +130,7 @@ WHERE n1.key = 'd10'
 RETURN p
 ----
 
-//console
+//graph
 
 === Get time identity as bit string
 
