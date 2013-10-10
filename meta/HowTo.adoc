@@ -137,11 +137,21 @@ RETURN p
 [source,cypher]
 ----
 MATCH p=shortestPath(n1:d-[:child_of*]->n2:y) 
+WHERE n1.key = 'd10' 
 RETURN DISTINCT reduce(s = '' , n IN nodes(p)| s + n.tempo) AS TimeIdentity 
 ORDER BY TimeIdentity
 ----
 
 //console
+
+=== Get all time identities as bit strings
+
+[source,cypher]
+----
+MATCH p=shortestPath(n1:d-[:child_of*]->n2:y) 
+RETURN DISTINCT reduce(s = '' , n IN nodes(p)| s + n.tempo) AS TimeIdentity 
+ORDER BY TimeIdentity
+----
 
 One of the most powerful use cases for traversals in a graph database is the need to model the recurrence relations of past events as they relate to future events. 
 
