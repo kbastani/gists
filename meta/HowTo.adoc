@@ -53,7 +53,7 @@ This means that an event is only meaningful by connecting it to data that descri
 
 A feature is further described by an arbitrary set of classes that generalize on its combinatorial or shared characteristics. In other words, two or more features can be grouped into a class that generalizes its characteristics at a group level.
 
-The image below represents a time scale (a, b, c, d) connected to a series of events (e). Events (e) are also connected to a hierarchy of features (f) which are then further generalized into classes (g).
+The image below represents a time scale connected to a series of events (met). Events, represented as triangular nodes in the image, are also connected to a hierarchy of features (John, Sally, Pam, Anne) which are then further generalized into classes (Person).
 
 image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
 
