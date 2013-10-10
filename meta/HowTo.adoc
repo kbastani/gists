@@ -190,7 +190,7 @@ WITH p, ev
 MATCH time_identity = d0:d<-[:event]-ev 
 WITH d0, p 
 MATCH p1=d0-[:child_of*]->y0:y 
-RETURN extract(x IN nodes(p)| coalesce(x.name, x.key)), reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity 
+RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity 
 ORDER BY TimeIdentity
 ----
 
