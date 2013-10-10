@@ -83,7 +83,7 @@ CREATE d7-[:NEXT]->d8-[:NEXT]->d9-[:NEXT]->d10-[:NEXT]->d11-[:NEXT]->d12-[:NEXT]
 CREATE (a2:a { key:'a2', tempo:'0' }) 
 CREATE (a2)<-[:child_of]-(b4:b { key:'b4', tempo:'0' }) 
 CREATE (a2)<-[:child_of]-(b5:b { key:'b5', tempo:'1' }) 
-CREATE (z1:z { key: 'z1', tempo:'0' })<-[:child_of]-(a2)
+CREATE (z1:z { key: 'z1', tempo:'1' })<-[:child_of]-(a2)
 CREATE y0<-[:child_of]-z1
 CREATE b4<-[:child_of]-(c8:c { key:'c8', tempo:'0' }) 
 CREATE b4<-[:child_of]-(c9:c { key:'c9', tempo:'1' }) 
