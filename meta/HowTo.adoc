@@ -134,6 +134,8 @@ RETURN p
 
 === Get time identity as bit string
 
+//output
+
 [source,cypher]
 ----
 MATCH p=shortestPath(n1:d-[:child_of*]->n2:y) 
@@ -145,6 +147,8 @@ ORDER BY TimeIdentity
 //console
 
 === Get all time identities as bit strings
+
+//output
 
 [source,cypher]
 ----
