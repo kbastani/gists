@@ -120,10 +120,10 @@ CREATE (met1:event:met { key:'met1', verb:'meet', past:'has met', present:'meets
 CREATE (met2:event:met { key:'met2', verb:'meet', past:'has met', present:'meets', future:'will meet' })-[:event]->d9 
 CREATE (met3:event:met { key:'met3', verb:'meet', past:'has met', present:'meets', future:'will meet' })-[:event]->d14
 CREATE (person:class { key:'person', plural:'People', singula:'Person' })
-CREATE (sally:class:person { key:'person0', name:'Sally' })-[:class_of]->person
-CREATE (anne:class:person { key:'person1', name:'Anne' })-[:class_of]->person
-CREATE (john:class:person { key:'person2', name:'John' })-[:class_of]->person
-CREATE (pam:class:person { key: 'person3', name:'Pam' })-[:class_of]->person
+CREATE (sally:person { key:'person0', name:'Sally' })-[:class_of]->person
+CREATE (anne:person { key:'person1', name:'Anne' })-[:class_of]->person
+CREATE (john:person { key:'person2', name:'John' })-[:class_of]->person
+CREATE (pam:person { key: 'person3', name:'Pam' })-[:class_of]->person
 CREATE anne-[:event]->met0-[:event]->pam
 CREATE pam-[:event]->met1-[:event]->sally
 CREATE sally-[:event]->met2-[:event]->anne
