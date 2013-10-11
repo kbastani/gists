@@ -185,7 +185,7 @@ image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.
 //output
 [source,cypher]
 ----
-MATCH p=p0:class:person-[:event]->ev-[:event]->p1:class:person 
+MATCH p=p0:person-[:event]->ev-[:event]->p1:person 
 WITH p, ev 
 MATCH time_identity = d0:d<-[:event]-ev 
 WITH d0, p 
