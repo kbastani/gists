@@ -217,7 +217,7 @@ ORDER BY TimeIdentity
 
 Graphs allow us to connect the dots in order to find recomendations.
 
-image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
+image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Recommendations.png[Recommendations_Graphs]
 
 
 
