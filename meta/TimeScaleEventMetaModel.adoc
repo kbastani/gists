@@ -192,7 +192,7 @@ The image below represents a time scale connected to a series of events (met). E
 image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
 
 
-=== Order temporal events by time identity ===
+=== Get time ordered events where people met other people ===
 
 //output
 [source,cypher]
@@ -205,6 +205,21 @@ MATCH p1=(d0)-[:child_of*]->(y0:y)
 RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity
 ORDER BY TimeIdentity
 ----
+
+=== Get time ordered events where people interacted with a product ===
+
+//output
+[source,cypher]
+----
+MATCH p=(p0:person)-[:event]->(ev)-[:event]->(p1:product)
+WITH p, ev
+MATCH time_identity = (d0:d)<-[:event]-(ev)
+WITH d0, p
+MATCH p1=(d0)-[:child_of*]->(y0:y)
+RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity
+ORDER BY TimeIdentity
+----
+
 
 Using this model we can determine how to recommend products or services to a user based on similar patterns of behavior happening over time.
 
