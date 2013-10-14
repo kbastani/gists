@@ -1,16 +1,16 @@
-= Time Scale Event Meta Model
-
-"Time is a dimension in which events can be ordered from the past through the present into the future." - via http://en.wikipedia.org/wiki/Time
-
-image::https://raw.github.com/kbastani/gists/master/meta/time-line.png[Timeline]
+= Time Scale Event Meta Model =
 
 Recently at the GraphConnect 2013 conference in San Francisco, many questions were asked about how to handle temporal or time-based traversals in a Neo4j graph database.
 
 The goal of this GraphGist is to provide you with a lens to help you see information as simple temporal facts that are captured across space and time.
 
+"Time is a dimension in which events can be ordered from the past through the present into the future." - via http://en.wikipedia.org/wiki/Time
+
+image::https://raw.github.com/kbastani/gists/master/meta/time-line.png[Timeline]
+
 Graph databases like Neo4j are not just a traditional data store. Rather, graph databases are an entirely new paradigm that aids a person in capturing meaning from the world as relativistic information described by connected data. 
 
-== What is relativistic information?
+== What is relativistic information? ==
 
 Relatvistic information is actually meaning. Unconnected data has no meaning. Only when you connect data can you better describe what it actually means.
 
@@ -31,7 +31,7 @@ image::https://raw.github.com/kbastani/gists/master/meta/event-model-1.png[Event
 
 The need to understand these nodes temporally, ordered linearly as time-based events, starts with modeling time as a graph.
 
-== What is a time graph?
+== What is a time graph? ==
 
 Time is a hierarchical model of categorization that enables the back-referencing or prediction of events on a timeline that moves forward in a single direction.
 
@@ -131,7 +131,7 @@ CREATE john-[:event]->met3-[:event]->sally
 RETURN *
 ----
 
-=== Get time identity as shortest path
+=== Get time identity as shortest path ===
 
 [source,cypher]
 ----
@@ -142,7 +142,7 @@ RETURN p
 
 //graph
 
-=== Get time identity as bit string
+=== Get time identity as bit string ===
 
 //output
 [source,cypher]
@@ -153,7 +153,7 @@ RETURN DISTINCT reduce(s = '' , n IN nodes(p)| n.tempo + s) AS TimeIdentity
 ORDER BY TimeIdentity
 ----
 
-=== Get all time identities as bit strings
+=== Get all time identities as bit strings ===
 
 //output
 [source,cypher]
@@ -166,7 +166,7 @@ ORDER BY TimeIdentity
 One of the most powerful use cases for traversals in a graph database is the need to model the recurrence relations of past events as they relate to future events. 
 
 
-== What is an event graph?
+== What is an event graph? ==
 
 An event is any feature or characteristic that describes the state of the world in the past, present, or future.
 
@@ -180,7 +180,7 @@ The image below represents a time scale connected to a series of events (met). E
 
 image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
 
-=== Order temporal events by time identity
+=== Order temporal events by time identity ===
 
 //output
 [source,cypher]
@@ -193,3 +193,5 @@ MATCH p1=(d0)-[:child_of*]->(y0:y)
 RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity
 ORDER BY TimeIdentity
 ----
+
+
