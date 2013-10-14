@@ -180,7 +180,7 @@ The image below represents a time scale connected to a series of events (met). E
 
 image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
 
-** **
+== ==
 
 === Order temporal events by time identity ===
 
