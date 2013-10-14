@@ -131,6 +131,7 @@ CREATE (view0:event:view { key:'view0', verb:'view', past:'has viewed', present:
 CREATE (view1:event:view { key:'view1', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d20 
 CREATE (view2:event:view { key:'view2', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d22 
 CREATE (buy0:event:buy { key:'buy0', verb:'buy', past:'bought', present:'is buying', future:'will buy' })-[:event]->d18 
+CREATE (buy1:event:buy { key:'buy1', verb:'buy', past:'bought', present:'is buying', future:'will buy' })-[:event]->d23 
 CREATE anne-[:event]->met0-[:event]->pam 
 CREATE pam-[:event]->met1-[:event]->sally 
 CREATE sally-[:event]->met2-[:event]->anne 
@@ -139,6 +140,7 @@ CREATE pam-[:event]->view0-[:event]->shoe
 CREATE pam-[:event]->buy0-[:event]->shoe 
 CREATE sally-[:event]->view1-[:event]->shoe 
 CREATE sally-[:event]->view2-[:event]->hat 
+CREATE sally-[:event]->buy1-[:event]->hat
 RETURN *
 ----
 
@@ -231,7 +233,7 @@ image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Recommendations.p
 
 
 
-=== People who bought shoes before buying hats ===
+=== People  ===
 
 //output
 [source,cypher]
