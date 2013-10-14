@@ -199,7 +199,7 @@ Using this model we can determine how to recommend products or services to a use
 
 == How do I do recommendations? ==
 
-Graphs allow us to connect the dots in order to find recomendations.
+Graphs allow us to connect the dots in order to find recommendations.
 
 image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Recommendations.png[Recommendations_Graphs]
 
