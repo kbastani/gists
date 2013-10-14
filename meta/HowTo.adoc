@@ -193,7 +193,3 @@ MATCH p1=d0-[:child_of*]->y0:y
 RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity 
 ORDER BY TimeIdentity
 ----
-
-This causality graph models the basic structure for determining the role of one event in time to another.
-
-"Causality (also referred to as causation[1]) is the relation between an event (the cause) and a second event (the effect), where the second event is understood as a consequence of the first." via http://en.wikipedia.org/wiki/Causality
