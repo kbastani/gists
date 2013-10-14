@@ -195,23 +195,7 @@ RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce
 ORDER BY TimeIdentity
 ----
 
-
-
-=== People who have met and also like shoes ===
-
-//output
-[source,cypher]
-----
-MATCH p=(p0:person)-[:event]->(ev)-[:event]->(p1:person)
-WITH p, ev
-MATCH time_identity = (d0:d)<-[:event]-(ev)
-WITH d0, p
-MATCH p1=(d0)-[:child_of*]->(y0:y)
-RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity
-ORDER BY TimeIdentity
-----
-
-
+Using this model we can determine how to recommend products or services to a user based on similar patterns of behavior happening over time.
 
 == How do I do recommendations? ==
 
