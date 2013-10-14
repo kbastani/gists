@@ -180,6 +180,8 @@ The image below represents a time scale connected to a series of events (met). E
 
 image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
 
+** **
+
 === Order temporal events by time identity ===
 
 //output
@@ -193,6 +195,8 @@ MATCH p1=(d0)-[:child_of*]->(y0:y)
 RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity
 ORDER BY TimeIdentity
 ----
+
+** **
 
 === People who have met and also like shoes ===
 
@@ -208,11 +212,15 @@ RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce
 ORDER BY TimeIdentity
 ----
 
+** **
+
 == How do I do recommendations? ==
 
 Graphs allow us to connect the dots in order to find recomendations.
 
 image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.png[Time_Scale_Event_Meta_Model]
+
+** **
 
 === People who bought shoes before buying hats ===
 
@@ -227,6 +235,8 @@ MATCH p1=(d0)-[:child_of*]->(y0:y)
 RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity
 ORDER BY TimeIdentity
 ----
+
+** **
 
 === People who viewed hats before buying a hat ===
 
