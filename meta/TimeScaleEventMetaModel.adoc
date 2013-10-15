@@ -132,11 +132,11 @@ CREATE (coffeemug:product:coffeemugs { key:'product1', name:'i heart neo4j coffe
 CREATE (view0:event:view { key:'view0', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d16 
 CREATE (view1:event:view { key:'view1', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d17 
 CREATE (view2:event:view { key:'view2', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d18 
-CREATE (view3:event:view { key:'view3', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d19 
-CREATE (view4:event:view { key:'view4', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d20 
-CREATE (view5:event:view { key:'view5', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d21 
-CREATE (buy0:event:buy { key:'buy0', verb:'buy', past:'bought', present:'is buying', future:'will buy' })-[:event]->d18 
-CREATE (buy1:event:buy { key:'buy1', verb:'buy', past:'bought', present:'is buying', future:'will buy' })-[:event]->d23 
+CREATE (view3:event:view { key:'view3', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d21 
+CREATE (view4:event:view { key:'view4', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d22 
+CREATE (view5:event:view { key:'view5', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d23 
+CREATE (buy0:event:buy { key:'buy0', verb:'buy', past:'bought', present:'is buying', future:'will buy' })-[:event]->d19 
+CREATE (buy1:event:buy { key:'buy1', verb:'buy', past:'bought', present:'is buying', future:'will buy' })-[:event]->d24 
 CREATE anne-[:event]->met0-[:event]->pam 
 CREATE pam-[:event]->met1-[:event]->sally 
 CREATE sally-[:event]->met2-[:event]->anne 
@@ -264,12 +264,12 @@ Let's find products that other people viewed who also viewed Sombreros.
 //output
 [source,cypher]
 ----
-MATCH p=(p0:person)-[:event]->(ev:buy)-[:event]->(p1:product) 
+MATCH p=(p0:person)-[:event]->(ev:view)-[:event]->(p1:product) 
 WITH p0, p1 
 WHERE p1.name = 'sombrero' 
 WITH p0 
 MATCH p0-[:event]->(ev:view)-[:event]->(p2:product) 
 WHERE p2.name <> 'sombrero' 
-RETURN p2.name
+RETURN po.name, p2.name
 ----
 
