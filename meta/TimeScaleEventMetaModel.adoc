@@ -142,7 +142,7 @@ CREATE pam-[:event]->met1-[:event]->sally
 CREATE sally-[:event]->met2-[:event]->anne 
 CREATE john-[:event]->met3-[:event]->sally 
 CREATE pam-[:event]->view0-[:event]->shoe
-CREATE pam-[:event]->view3-[:event]->headphones
+CREATE pam-[:event]->view3-[:event]->headphone
 CREATE pam-[:event]->view4-[:event]->coffeemug
 CREATE pam-[:event]->buy0-[:event]->shoe 
 CREATE sally-[:event]->view1-[:event]->shoe 
@@ -270,6 +270,6 @@ WHERE p1.name = 'pair of red heels'
 WITH p0 
 MATCH p0-[:event]->(ev:view)-[:event]->(p2:product) 
 WHERE p2.name <> 'pair of red heels' 
-RETURN p0.name, p2.name
+RETURN p2.name as Product, count(p0) as Views
 ----
 
