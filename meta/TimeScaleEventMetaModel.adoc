@@ -127,20 +127,28 @@ CREATE (pam:person { key: 'person3' , name:'Pam' })-[:class_of]->person
 CREATE (product:class { key:'product', plural:'Products', singular:'Product' }) 
 CREATE (shoe:product:shoes { key:'product0', name:'pair of red heels' })-[:class_of]->product 
 CREATE (hat:product:hats { key:'product1', name:'sombrero' })-[:class_of]->product
+CREATE (hat:product:headphones { key:'product1', name:'noise cancelling headphones' })-[:class_of]->product
+CREATE (hat:product:coffeemug { key:'product1', name:'i heart neo4j coffee mug' })-[:class_of]->product
 CREATE (view0:event:view { key:'view0', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d16 
-CREATE (view1:event:view { key:'view1', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d20 
-CREATE (view2:event:view { key:'view2', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d22 
+CREATE (view1:event:view { key:'view1', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d17 
+CREATE (view2:event:view { key:'view2', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d18 
+CREATE (view3:event:view { key:'view3', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d19 
+CREATE (view4:event:view { key:'view4', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d20 
+CREATE (view5:event:view { key:'view5', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d21 
 CREATE (buy0:event:buy { key:'buy0', verb:'buy', past:'bought', present:'is buying', future:'will buy' })-[:event]->d18 
 CREATE (buy1:event:buy { key:'buy1', verb:'buy', past:'bought', present:'is buying', future:'will buy' })-[:event]->d23 
 CREATE anne-[:event]->met0-[:event]->pam 
 CREATE pam-[:event]->met1-[:event]->sally 
 CREATE sally-[:event]->met2-[:event]->anne 
 CREATE john-[:event]->met3-[:event]->sally 
-CREATE pam-[:event]->view0-[:event]->shoe 
+CREATE pam-[:event]->view0-[:event]->shoe
+CREATE pam-[:event]->view3-[:event]->headphones
+CREATE pam-[:event]->view4-[:event]->coffeemug
 CREATE pam-[:event]->buy0-[:event]->shoe 
 CREATE sally-[:event]->view1-[:event]->shoe 
 CREATE sally-[:event]->view2-[:event]->hat 
 CREATE sally-[:event]->buy1-[:event]->hat
+CREATE sally-[:event]->view5-[:event]->coffeemug
 RETURN *
 ----
 
