@@ -270,6 +270,6 @@ WHERE p1.name = 'sombrero'
 WITH p0 
 MATCH p0-[:event]->(ev:view)-[:event]->(p2:product) 
 WHERE p2.name <> 'sombrero' 
-RETURN po.name, p2.name
+RETURN p0.name, p2.name
 ----
 
