@@ -126,7 +126,7 @@ CREATE (john:person { key:'person2', name:'John' })-[:class_of]->person
 CREATE (pam:person { key: 'person3' , name:'Pam' })-[:class_of]->person 
 CREATE (product:class { key:'product', plural:'Products', singular:'Product' }) 
 CREATE (shoe:product:shoes { key:'product0', name:'pair of red heels' })-[:class_of]->product 
-CREATE (hat:product:hats { key:'product1', name:'sombrero' })-[:class_of]->produtc 
+CREATE (hat:product:hats { key:'product1', name:'sombrero' })-[:class_of]->product
 CREATE (view0:event:view { key:'view0', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d16 
 CREATE (view1:event:view { key:'view1', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d20 
 CREATE (view2:event:view { key:'view2', verb:'view', past:'has viewed', present:'is viewing', future:'will view' })-[:event]->d22 
