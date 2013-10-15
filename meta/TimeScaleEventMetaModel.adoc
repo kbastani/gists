@@ -249,16 +249,19 @@ ORDER BY TimeIdentity
 
 
 
-=== People who bought X also bought Y ===
+=== People who viewed X also viewed Y ===
+
+Let's find products that other people viewed who also viewed Sombreros.
 
 //output
 [source,cypher]
 ----
-MATCH p=(p0:person)-[:event]->(ev:view)-[:event]->(p1:shoes)
-WITH p, ev
-MATCH time_identity = (d0:d)<-[:event]-(ev)
-WITH d0, p
-MATCH p1=(d0)-[:child_of*]->(y0:y)
-RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity
-ORDER BY TimeIdentity
+MATCH p=(p0:person)-[:event]->(ev:buy)-[:event]->(p1:product) 
+WITH p0, p1 
+WHERE p1.name = 'sombrero' 
+WITH p0 
+MATCH p0-[:event]->(ev:view)-[:event]->(p2:product) 
+WHERE p2.name <> 'sombrero' 
+RETURN p2.name
 ----
+
