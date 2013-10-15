@@ -273,3 +273,9 @@ WHERE p2.name <> 'pair of red heels'
 RETURN p2.name as Product, count(p0) as Views
 ----
 
+
+=== Recommendation GraphGists ===
+
+It's your turn! Fork this GraphGist on GitHub and modify the code to create your own recommendation GraphGists.
+
+Also, follow me on Twitter for more Neo4j GraphGists -> http://www.twitter.com/kennybastani[@kennybastani]
