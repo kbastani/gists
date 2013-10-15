@@ -259,17 +259,17 @@ ORDER BY TimeIdentity
 
 === People who viewed X also viewed Y ===
 
-Let's find products that other people viewed who also viewed Sombreros.
+Let's find products that other people viewed who also viewed the product named 'pair of red heels'.
 
 //output
 [source,cypher]
 ----
 MATCH p=(p0:person)-[:event]->(ev:view)-[:event]->(p1:product) 
 WITH p0, p1 
-WHERE p1.name = 'sombrero' 
+WHERE p1.name = 'pair of red heels' 
 WITH p0 
 MATCH p0-[:event]->(ev:view)-[:event]->(p2:product) 
-WHERE p2.name <> 'sombrero' 
+WHERE p2.name <> 'pair of red heels' 
 RETURN p0.name, p2.name
 ----
 
