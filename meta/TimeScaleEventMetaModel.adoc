@@ -249,12 +249,12 @@ ORDER BY TimeIdentity
 
 
 
-=== People who viewed hats before buying a hat ===
+=== People who bought X also bought Y ===
 
 //output
 [source,cypher]
 ----
-MATCH p=(p0:person)-[:event]->(ev:view)-[:event]->(p1:shoes), (p0:person)-[:event]->(ev:buy)-[:event]->(p1:shoes)
+MATCH p=(p0:person)-[:event]->(ev:view)-[:event]->(p1:shoes)
 WITH p, ev
 MATCH time_identity = (d0:d)<-[:event]-(ev)
 WITH d0, p
