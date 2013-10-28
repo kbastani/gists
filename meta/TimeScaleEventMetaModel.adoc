@@ -156,7 +156,7 @@ RETURN *
 
 [source,cypher]
 ----
-MATCH p=shortestPath(n1:d-[:child_of*]->n2:y) 
+MATCH p=shortestPath((n1:d)-[:child_of*]->(n2:y)) 
 WHERE n1.key = 'd10' 
 RETURN p
 ----
@@ -168,7 +168,7 @@ RETURN p
 //output
 [source,cypher]
 ----
-MATCH p=shortestPath(n1:d-[:child_of*]->n2:y) 
+MATCH p=shortestPath((n1:d)-[:child_of*]->(n2:y)) 
 WHERE n1.key = 'd10' 
 RETURN DISTINCT reduce(s = '' , n IN nodes(p)| n.tempo + s) AS TimeIdentity 
 ORDER BY TimeIdentity
@@ -179,7 +179,7 @@ ORDER BY TimeIdentity
 //output
 [source,cypher]
 ----
-MATCH p=shortestPath(n1:d-[:child_of*]->n2:y) 
+MATCH p=shortestPath((n1:d)-[:child_of*]->(n2:y)) 
 RETURN DISTINCT reduce(s = '' , n IN nodes(p)| n.tempo + s) AS TimeIdentity 
 ORDER BY TimeIdentity
 ----
