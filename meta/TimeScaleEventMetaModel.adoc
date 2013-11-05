@@ -161,8 +161,6 @@ WHERE n1.key = 'd10'
 RETURN p
 ----
 
-//graph
-
 === Get time identity as bit string ===
 
 //output
