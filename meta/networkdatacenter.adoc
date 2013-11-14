@@ -1,6 +1,6 @@
 = Network and Datacenter Management
 
-This interactive Neo4j graph tutorial covers Network and Datacenter Management scenarios.
+This interactive Neo4j graph tutorial covers Network and Data Center Management scenarios.
 
 == Introduction to Problem
 
