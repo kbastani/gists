@@ -1,4 +1,4 @@
-= Network and Datacenter Management
+= Network and Data Center Management
 
 This interactive Neo4j graph tutorial covers Network and Data Center Management scenarios.
 
