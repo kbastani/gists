@@ -161,6 +161,8 @@ WHERE n1.key = 'd10'
 RETURN p
 ----
 
+//table
+
 === Get time identity as bit string ===
 
 //output
