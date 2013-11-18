@@ -165,7 +165,6 @@ RETURN extract(n IN nodes(p) | n.key) as Path
 
 === Get time identity as bit string ===
 
-//output
 [source,cypher]
 ----
 MATCH p=shortestPath((n1:d)-[:child_of*]->(n2:y)) 
@@ -178,7 +177,6 @@ ORDER BY TimeIdentity
 
 === Get all time identities as bit strings ===
 
-//output
 [source,cypher]
 ----
 MATCH p=shortestPath((n1:d)-[:child_of*]->(n2:y)) 
@@ -208,7 +206,6 @@ image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Temporal-Binding.
 
 === Get time ordered events where people met other people ===
 
-//output
 [source,cypher]
 ----
 MATCH p=(p0:person)-[:event]->(ev)-[:event]->(p1:person)
@@ -224,7 +221,6 @@ ORDER BY TimeIdentity
 
 === Get time ordered events where people interacted with a product ===
 
-//output
 [source,cypher]
 ----
 MATCH p=(p0:person)-[:event]->(ev)-[:event]->(p1:product)
@@ -251,7 +247,6 @@ image::https://raw.github.com/kbastani/gists/master/meta/TSEMM-Recommendations.p
 
 === People who viewed a product  ===
 
-//output
 [source,cypher]
 ----
 MATCH p=(p0:person)-[:event]->(ev:view)-[:event]->(p1:product)
@@ -269,7 +264,6 @@ ORDER BY TimeIdentity
 
 Let's find products that other people viewed who also viewed the product named 'pair of red heels'.
 
-//output
 [source,cypher]
 ----
 MATCH p=(p0:person)-[:event]->(ev:view)-[:event]->(p1:product) 
