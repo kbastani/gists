@@ -174,6 +174,8 @@ RETURN DISTINCT reduce(s = '' , n IN nodes(p)| n.tempo + s) AS TimeIdentity
 ORDER BY TimeIdentity
 ----
 
+//table
+
 === Get all time identities as bit strings ===
 
 //output
@@ -183,6 +185,8 @@ MATCH p=shortestPath((n1:d)-[:child_of*]->(n2:y))
 RETURN DISTINCT reduce(s = '' , n IN nodes(p)| n.tempo + s) AS TimeIdentity 
 ORDER BY TimeIdentity
 ----
+
+//table
 
 One of the most powerful use cases for traversals in a graph database is the need to model the recurrence relations of past events as they relate to future events. 
 
@@ -216,6 +220,8 @@ RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce
 ORDER BY TimeIdentity
 ----
 
+//table
+
 === Get time ordered events where people interacted with a product ===
 
 //output
@@ -229,6 +235,8 @@ MATCH p1=(d0)-[:child_of*]->(y0:y)
 RETURN extract(x IN nodes(p)| coalesce(x.name, x.future)) AS Interaction, reduce(s = '' , n IN nodes(p1)| n.tempo + s) AS TimeIdentity
 ORDER BY TimeIdentity
 ----
+
+//table
 
 
 Using this model we can determine how to recommend products or services to a user based on similar patterns of behavior happening over time.
@@ -255,7 +263,7 @@ RETURN extract(x IN nodes(p)| coalesce(x.name, x.past)) AS Interaction, reduce(s
 ORDER BY TimeIdentity
 ----
 
-
+//table
 
 === People who viewed X also viewed Y ===
 
@@ -273,6 +281,7 @@ WHERE p2.name <> 'pair of red heels'
 RETURN p2.name as Product, count(p0) as Views
 ----
 
+//table
 
 === Recommendation GraphGists ===
 
