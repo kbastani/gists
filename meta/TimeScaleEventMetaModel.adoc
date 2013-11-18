@@ -158,7 +158,7 @@ RETURN *
 ----
 MATCH p=shortestPath((n1:d)-[:child_of*]->(n2:y)) 
 WHERE n1.key = 'd10' 
-RETURN p
+RETURN extract(n IN nodes(p) | n.key) as Path
 ----
 
 //table
