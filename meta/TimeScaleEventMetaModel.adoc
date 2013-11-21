@@ -161,6 +161,8 @@ WHERE n1.key = 'd10'
 RETURN extract(n IN nodes(p) | n.key) as Path
 ----
 
+//graph
+
 //table
 
 === Get time identity as bit string ===
