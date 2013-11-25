@@ -1,4 +1,7 @@
 = Time Scale Event Meta Model =
+:neo4j-version: 2.0.0-RC1
+:author: Kenny Bastani
+:twitter: @kennybastani
 
 Recently at the http://www.graphconnect.com/san-francisco[GraphConnect 2013 conference in San Francisco], many questions were asked about how to handle temporal or time-based traversals in a Neo4j graph database.
 
@@ -285,7 +288,3 @@ It's your turn! Fork this GraphGist on GitHub and modify the code to create your
 
 Also, follow me on Twitter for more Neo4j GraphGists -> http://www.twitter.com/kennybastani[@kennybastani]
 
-= Gist Title =
-:neo4j-version: 2.0.0-RC1
-:author: Kenny Bastani
-:twitter: @kennybastani
