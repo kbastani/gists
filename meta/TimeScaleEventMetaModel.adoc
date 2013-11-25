@@ -284,3 +284,8 @@ RETURN p2.name as Product, count(p0) as Views
 It's your turn! Fork this GraphGist on GitHub and modify the code to create your own recommendation GraphGists.
 
 Also, follow me on Twitter for more Neo4j GraphGists -> http://www.twitter.com/kennybastani[@kennybastani]
+
+= Gist Title =
+:neo4j-version: 2.0.0-RC1
+:author: Kenny Bastani
+:twitter: @kennybastani
